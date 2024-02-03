@@ -1,0 +1,48 @@
+.reviews-container {
+    max-width: 800px;
+    margin: 20px auto;
+    min-height: 300px; /* Set a minimum height */
+    overflow-y: auto; /* Allow vertical scrolling if needed */
+}
+
+.reviews-container h2 {
+    font-size: 24px;
+    text-align: center;
+    color: #cc6666;
+    margin-bottom: 20px;
+}
+
+.card {
+    background-color: #333333;
+    color: #ffffff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+/* Additional styling for individual reviews */
+.card p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.card hr {
+    border: 0.5px solid #555555;
+    margin: 10px 0;
+}
+/* Add this CSS to style the stars */
+.stars {
+    display: inline-block;
+    font-size: 20px;
+    color: #ffd700; /* Set the star color */
+}
+
+.stars::before {
+    content: '★';
+}
+
+.rating-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}

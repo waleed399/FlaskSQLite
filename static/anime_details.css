@@ -1,0 +1,58 @@
+/* Custom CSS for anime details page */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #202020;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+.anime-details {
+    display: flex;
+    max-width: 1200px;
+    margin: 50px auto;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.text-details {
+    flex-grow: 1;
+    margin-left: 20px;
+}
+
+.text-details h1 {
+    font-size: 36px;
+    color: #cc6666;
+    margin-bottom: 10px;
+}
+
+.text-details hr {
+    border: 0.5px solid #555555;
+    margin: 10px 0;
+}
+
+.text-details p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.sticky-login_review {
+    position: fixed;
+    left: 20px; /* Adjust left margin as needed */
+    bottom: 20px; /* Adjust bottom margin as needed */
+    background-color: #cc6666;
+    color: #ffffff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    animation: jumpAndBounce 5s infinite;
+}
+
+
