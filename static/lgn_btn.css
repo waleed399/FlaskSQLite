@@ -26,6 +26,22 @@
     font-size: 20px;
     animation: jumpAndBounce 5s infinite;
 }
+.sticky-add-anime {
+    position: relative;
+    left: 0%;
+    bottom: 10px; /* Adjust the initial position */
+    transform: translateX(-50%);
+    background-color: #f00;
+    color: #000;
+    padding: 20px 50px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 20px;
+    animation: jumpAndBounce 5s infinite;
+}
+
+
 
 .username-info {
     color: #fff; /* Set the text color to white or the desired color */

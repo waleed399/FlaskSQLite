@@ -10,7 +10,13 @@
 <body>
     <div class="anime-details">
         <div class="image-container">
+            {% if anime.image.startswith('images/') %}
+    <!-- Image is inside the static folder -->
             <img src="{{ url_for('static', filename=anime.image) }}" alt="{{ 'Anime ' + anime.id|string }}">
+            {% else %}
+    <!-- Image is an external URL -->
+             <img src="{{ anime.image }}" alt="{{ 'Anime ' + anime.id|string }}">
+            {% endif %}
         </div>
         <div class="text-details">
             <h1>{{ anime.name }}</h1>

@@ -55,4 +55,63 @@ body {
     animation: jumpAndBounce 5s infinite;
 }
 
+ body {
+            font-family: 'Arial', sans-serif;
+            background-color: #202020;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
 
+        .anime-details {
+            display: flex;
+            max-width: 1200px;
+            margin: 50px auto;
+        }
+
+        .text-details {
+            flex-grow: 1;
+            margin-left: 20px;
+        }
+
+        .text-details h1 {
+            font-size: 36px;
+            color: #cc6666;
+            margin-bottom: 20px; /* Increased margin */
+        }
+
+        .text-details label {
+            font-size: 20px; /* Increased font size */
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .text-details input,
+        .text-details textarea,
+        .text-details select {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px; /* Increased font size */
+            margin-bottom: 20px; /* Increased margin */
+            border: none;
+            border-radius: 5px;
+            box-sizing: border-box;
+            background-color: #444; /* Dark gray background */
+            color: #ffffff; /* White text color */
+        }
+
+        .sticky-login_review {
+            position: fixed;
+            left: 20px;
+            bottom: 20px;
+            background-color: #cc6666;
+            color: #ffffff;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            animation: jumpAndBounce 5s infinite;
+        }
+    </style>

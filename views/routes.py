@@ -13,19 +13,6 @@ def setup_routes():
     @app.route("/")
     def homepage():
 
-        '''
-        anime_instance = Anime(
-        name='Dr. stone',
-        description="Dr. Stone is a Japanese anime series based on the manga of the same name written by Riichiro Inagaki and illustrated by Boichi. The story follows Taiju Oki and Senku Ishigami, who find themselves in a world where humanity has been petrified and turned into stone statues. Senku, a scientific genius, seeks to revive civilization and use science to rebuild the world. The series explores themes of science, survival, and the ingenuity of the human mind",
-        author='Riichiro Inagaki',
-        actors='Senku Ishigami, Taiju Oki, Yuzuriha Ogawa, Tsukasa Shishio',
-        release_year=2019,
-        image='images/dr_stone.jpeg'
-        )
-        db.session.add(anime_instance)
-        db.session.commit()
-        '''
-
         anime_list = Anime.query.all()
         user_is_active = session.get('user_is_active', False)
         if user_is_active:
@@ -56,6 +43,9 @@ def register():
         password = request.form['password']
         confirmed_pass = request.form['confirm_password']
         # Perform registration logic, e.g., save to the database
+        if len(password) < 8:
+            flash('Password must be more than 8 characters', 'error')
+            return redirect(url_for('register'))
         if username not in usernames and confirmed_pass == password:
             hashed_password = generate_password_hash(password, method='pbkdf2:sha256')
             curr_user = User(username=username, password=hashed_password)
@@ -125,3 +115,26 @@ def add_review(anime_id):
     reviews = Review.query.filter_by(anime_id = anime_id).all()
     anime_list = Anime.query.all()
     return render_template("anime_details.html", anime=anime_list[anime_id-1], user_is_active=user.is_active, reviews=reviews)
+
+
+@app.route('/add_anime', methods=['GET', 'POST'])
+def add_anime():
+    if request.method == 'POST':
+        # Get data from the form
+        name = request.form.get('name')
+        description = request.form.get('description')
+        author = request.form.get('author')
+        actors = request.form.get('actors')
+        release_year = request.form.get('release_year')
+        image = request.form.get('image')
+
+        # Create a new Anime instance
+        new_anime = Anime(name=name, description=description, author=author, actors=actors, release_year=release_year, image=image)
+
+        # Add the new anime to the database
+        db.session.add(new_anime)
+        db.session.commit()
+
+        return redirect(url_for('homepage'))  # Redirect to the home page after adding the anime
+
+    return render_template('add_anime.html')

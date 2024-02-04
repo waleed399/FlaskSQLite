@@ -17,7 +17,13 @@
             <l class="anime-item {% if loop.index == 1 %}golden-anime{% endif %}">
                 <h2>{{ anime.name }}</h2>
                 <a href="{{ url_for('series_display', anime_id=anime.id, user_is_active = user_is_active | int) }}">
-                    <img src="{{ url_for('static', filename=anime.image) }}" alt="{{ 'Anime ' + loop.index|string }}" width="300" height="400">
+                    {% if anime.image.startswith('images/') %}
+                    <!-- Image is inside the static folder -->
+                    <img src="{{ url_for('static', filename=anime.image) }}" alt="{{ 'Anime ' + anime.id|string }}" width="200" height="300">
+                    {% else %}
+                    <!-- Image is an external URL -->
+                    <img src="{{ anime.image }}" alt="{{ 'Anime ' + anime.id|string }}" width="200" height="300">
+                    {% endif %}
                 </a>
             </l>
             {% if loop.index % 3 == 0 %}
@@ -31,7 +37,26 @@
         <p class="username-info">Logged in as: {{ username }}</p>
     {% else %}
         <a href="{{ url_for('show_login') }}" class="sticky-login">Login</a>
+    <p class="username-info">welcome guest</p>
     {% endif %}
+
+    {% if username == "admin" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Anime</title>
+    <link href="{{ url_for('static', filename='lgn_btn.css')}}" rel="stylesheet">
+</head>
+<body>
+    <h1>Add New Anime</h1>
+
+    <a href="{{ url_for('add_anime') }}" class="sticky-add-anime">Add Anime</a>
 
 </body>
 </html>
+
+</body>
+</html>
+{% endif %}

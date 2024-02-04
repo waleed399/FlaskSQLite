@@ -8,8 +8,7 @@ body {
 
 h1 {
     color: #ffcc00; /* Yellow heading color */
-    font-size:72px
-
+    font-size: 72px;
 }
 
 .anime-list {
@@ -27,31 +26,33 @@ h1 {
     background-color: #404040; /* Dark gray background color */
     padding: 15px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* White shadow effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow effect */
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transitions */
 }
 
 .anime-item h2 {
-    color: #00bcd4; /* Cyan heading color */
+    color: #000; /* Black title color */
 }
 
 .anime-item img {
     border-radius: 5px;
+    max-width: 100%;
+    height: auto;
 }
 
-/* Add hover effect */
+/* Add dynamic hover effect with glowing shadow */
 .anime-item:hover {
     background-color: #505050; /* Slightly lighter gray on hover */
     transform: scale(1.05);
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 0 20px #ffcc00; /* Glowing shadow on hover with yellow color */
 }
 
 /* Add a unique style for the golden anime */
-/* Add a unique style for the golden anime */
 .golden-anime {
-    background-color: #ffd700; /* Golden color */
+    background-color: #ffd700 !important; /* Golden color */
     border: 10px solid #000; /* Thick black border */
     border-radius: 30px; /* Optional: Rounded corners */
     padding: 10px; /* Optional: Add padding */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Black shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 0 20px #ffcc00; /* Enhanced shadow effect with glowing yellow color */
     color: #000; /* Black text color */
 }
