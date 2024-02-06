@@ -3,7 +3,7 @@ Anime show project with the option to add reviews for every chosen anime
 
 admin user :
 *username : admin
-*password: admin
+*password: adminadmin
 that can add a new anime or remove an existing anime from the database
 
 i have made several users, you can try with :
