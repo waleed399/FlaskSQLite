@@ -1,0 +1,15 @@
+/* login.css or register.css */
+
+/* Style for flash messages */
+.flash-message {
+    background-color: #f44336; /* Red background color */
+    color: #fff; /* White text color */
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+/* Style for success flash messages */
+.flash-message-success {
+    background-color: #4CAF50; /* Green background color */
+}

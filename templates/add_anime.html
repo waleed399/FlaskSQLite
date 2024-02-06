@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Anime</title>
+    <link href="{{ url_for('static', filename='lgn_btn.css')}}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='anime_details.css')}}" rel="stylesheet">
+
+</head>
+<body>
+    <div class="anime-details">
+        <form action="{{ url_for('add_anime') }}" method="post" class="text-details">
+            <h1>Add a New Anime</h1>
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" rows="4" cols="50" required></textarea>
+
+            <label for="author">Director:</label>
+            <input type="text" id="author" name="author" required>
+
+            <label for="actors">Main Actors:</label>
+            <input type="text" id="actors" name="actors" required>
+
+            <label for="release_year">Year of Release:</label>
+            <input type="number" id="release_year" name="release_year" required>
+
+            <label for="image">Image URL:</label>
+            <input type="text" id="image" name="image" required>
+
+            <input type="submit" value="Add Anime">
+        </form>
+    </div>
+
+    <a href="{{ url_for('homepage') }}" class="sticky-login_review">Back to Home</a>
+</body>
+</html>
