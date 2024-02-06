@@ -9,4 +9,4 @@ class Anime(db.Model):
     actors = db.Column(db.String, unique=False, nullable=False)
     release_year = db.Column(db.Integer, unique=False, nullable=False)
     image = db.Column(db.String, unique=False, nullable=False)
-    reviews = db.relationship('Review', backref='anime', lazy=True)
+    reviews = db.relationship('Review', backref='anime', lazy=True, cascade='all, delete-orphan')

@@ -56,3 +56,18 @@ h1 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 0 20px #ffcc00; /* Enhanced shadow effect with glowing yellow color */
     color: #000; /* Black text color */
 }
+.delete-button-container {
+    position: relative;
+}
+
+.delete-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}

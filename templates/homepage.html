@@ -6,17 +6,61 @@
     <title>Anime Show Website</title>
     <link href="{{ url_for('static', filename='homepage.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='lgn_btn.css') }}">
+    <script src="{{ url_for('static', filename='confirmation.js') }}"></script>
 
 </head>
 <body>
 
-    <h1>Welcome to the Best Anime Show!</h1>
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-size: cover;
+            background-position: center;
+            color: #fff; /* Text color */
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100vh; /* Adjust as needed */
+        }
+
+        h1 {
+            font-size: 3em; /* Adjust the font size as needed */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for better visibility */
+            margin-top: 50px; /* Adjust the top margin as needed */
+            background-color: rgba(0, 0, 0, 0.7); /* Highlighted background color */
+            padding: 20px; /* Adjust the padding as needed */
+            border-radius: 10px; /* Add border radius for rounded corners */
+        }
+    </style>
+    <title>Anime Show</title>
+</head>
+<body>
+    <h1> Anime Show </h1>
+</body>
+</html>
+
 
     <ul class="anime-list">
         {% for anime in anime_list %}
             <l class="anime-item {% if loop.index == 1 %}golden-anime{% endif %}">
                 <h2>{{ anime.name }}</h2>
                 <a href="{{ url_for('series_display', anime_id=anime.id, user_is_active = user_is_active | int) }}">
+                    {% if username == "admin" %}
+                      <div class="delete-button-container">
+                        <form method="post" action="{{ url_for('delete_anime', anime_id=anime.id) }}">
+                        <button type="submit" class="delete-button" onclick="return confirmDelete()">×</button>
+                        </form>
+                      </div>
+                        {% endif %}
                     {% if anime.image.startswith('images/') %}
                     <!-- Image is inside the static folder -->
                     <img src="{{ url_for('static', filename=anime.image) }}" alt="{{ 'Anime ' + anime.id|string }}" width="200" height="300">

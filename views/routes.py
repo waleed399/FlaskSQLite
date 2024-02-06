@@ -24,9 +24,9 @@ def setup_routes():
 
 @app.route("/series_display/<int:anime_id>/<int:user_is_active>")
 def series_display(anime_id, user_is_active):
-    anime_list = Anime.query.all()
+    anime = Anime.query.filter_by(id=anime_id).first()
     reviews = Review.query.filter_by(anime_id=anime_id).all()
-    return render_template("anime_details.html", anime=anime_list[anime_id-1], user_is_active=user_is_active, reviews=reviews)
+    return render_template("anime_details.html", anime=anime, user_is_active=user_is_active, reviews=reviews)
 
 
 @app.route('/show_login')
@@ -138,3 +138,18 @@ def add_anime():
         return redirect(url_for('homepage'))  # Redirect to the home page after adding the anime
 
     return render_template('add_anime.html')
+
+
+@app.route('/delete_anime/<int:anime_id>', methods=['POST'])
+def delete_anime(anime_id):
+
+    anime = Anime.query.get(anime_id)
+
+    # Check if the anime exists
+    if anime:
+        # Delete the anime from the database
+        db.session.delete(anime)
+        db.session.commit()
+
+    # Redirect to the anime list page
+    return redirect(url_for('homepage'))

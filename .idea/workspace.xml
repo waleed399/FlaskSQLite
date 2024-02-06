@@ -2,7 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="56cc9d07-1860-4ed1-94a8-4db36baa41e0" name="Changes" comment="commit final files">
+      <change afterPath="$PROJECT_DIR$/static/confirmation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/database.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instance/site.db" beforeDir="false" afterPath="$PROJECT_DIR$/instance/site.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Anime.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/Anime.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Review.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/Review.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/homepage.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/homepage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/homepage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/views/routes.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +32,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2bcyzbzsA8j300lH3JspMI0tA4W" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -159,9 +167,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.app" />
-        <item itemvalue="Python.User" />
         <item itemvalue="Python.routes" />
         <item itemvalue="Python.database" />
+        <item itemvalue="Python.User" />
         <item itemvalue="Python.Anime" />
       </list>
     </recent_temporary>
@@ -182,10 +190,43 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="false" />
+                </map>
+              </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/views/routes.py</url>
+          <line>145</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/views/routes.py</url>
+          <line>26</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
